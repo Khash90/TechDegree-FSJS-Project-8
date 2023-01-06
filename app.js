@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// database connection
 (async () => {
   try {
     await Sequelize.sync();
