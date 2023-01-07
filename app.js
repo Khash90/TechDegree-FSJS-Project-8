@@ -43,7 +43,7 @@ app.use( (req, res, next) => {
 app.use((err, req, res, next) => {
   // set locals, only providing error in development
   err.status = err.status ? err.status : 500;
-  err.message = err.message ? err.message : "Sorry,,,The was an issue with the server!";
+  err.message = err.message ? err.message : "Sorry,,,There was an issue with the server!";
 
   console.log(err.status, err.message)
 
