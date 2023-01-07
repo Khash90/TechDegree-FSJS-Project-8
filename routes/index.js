@@ -16,11 +16,13 @@ function asyncHandler(cb){
 
 /* GET home page. */
 router.get('/', (req, res) => {
+  
   res.redirect("/books");
 });
 
 
 router.get('/books', asyncHandler(async(req, res) => {
+  
   const books = await Book.findAll();
   res.render('index', { books });
 }));
@@ -42,7 +44,7 @@ router.post("/new", asyncHandler(async(req,res) => {
       book = await Book.build(req.body);
       res.render("new-book", {book, errors: error.errors , title: "New Book"})
     } else {
-      throw error
+      res.sendStatus(404);
     }
     
   }
@@ -81,7 +83,7 @@ router.post("/:id", asyncHandler(async(req,res) => {
       book.id = req.params.id;
       res.render("update-book", {book, errors: error.errors, title: "New Book "})
     } else {
-      throw error;
+      res.sendStatus(404);
     }
   }
 }));
@@ -99,6 +101,6 @@ router.post("/:id/delete", asyncHandler(async(req,res) => {
     err.message = "Book Id Doesn't Exist";
     res.render("page-not-found", {title: "Page-Not-Found", err });
   }
-}))
+}));
 
 module.exports = router;
