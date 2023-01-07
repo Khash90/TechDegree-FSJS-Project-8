@@ -1,6 +1,12 @@
 extends layout
 
 block content
-  h1= message
-  h2= error.status
-  pre #{error.stack}
+  h1 Error With Server
+  
+  //- pre #{error.stack}
+
+  p 
+   a(class="button" href="/") Back To Home
+  
+  img.main-error(src="static/404-error.jpg", alt="img")
+

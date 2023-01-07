@@ -3,7 +3,10 @@ body {
   font: 18px "Garamond", serif;
   
 }
-
+.main-error{
+  width: 90%;
+  height: 90%;
+}
 a {
   color: #019875;
   text-decoration: none;
