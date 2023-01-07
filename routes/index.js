@@ -19,9 +19,8 @@ router.get('/', (req, res) => {
   res.redirect("/books");
 });
 
-
+/* Show the full list books */
 router.get('/books', asyncHandler(async(req, res) => {
-  
   const books = await Book.findAll({ order: [["createdAt", "DESC"]] });
   res.render('index', { books });
 }));
