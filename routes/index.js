@@ -16,20 +16,19 @@ function asyncHandler(cb){
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  
   res.redirect("/books");
 });
 
 
 router.get('/books', asyncHandler(async(req, res) => {
   
-  const books = await Book.findAll();
+  const books = await Book.findAll({ order: [["createdAt", "DESC"]] });
   res.render('index', { books });
 }));
 
 
 /* Create new book */
-router.get("/new", (req,res) => {
+router.get("/books/new", (req,res) => {
   res.render("new-book", {book: {}, title: "New Book "})
 });
 
@@ -40,11 +39,11 @@ router.post("/new", asyncHandler(async(req,res) => {
     book = await Book.create(req.body);
     res.redirect("/");
   } catch (error) {
-    if (error.name === " SequelizeValidationError") {
+    if (error.name === "SequelizeValidationError") {
       book = await Book.build(req.body);
       res.render("new-book", {book, errors: error.errors , title: "New Book"})
     } else {
-      res.sendStatus(404);
+      throw error;
     }
     
   }

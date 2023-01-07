@@ -1,5 +1,25 @@
 extends layout
 
 block content
-  h1= "Library" 
-  p Welcome to #{title}
+  h1 Library Manager
+  p 
+    a.button(href="books/new") Create Book
+
+  table 
+    thead 
+      tr 
+         th Title 
+         th Author 
+         th Genre 
+         th Year 
+    tbody 
+      each book in books 
+       tr 
+         td 
+           a(href=`/books/${book.id}`)  #{book.title}
+         td= book.author 
+         td= book.genre 
+         td= book.year 
+           
+  
+  
