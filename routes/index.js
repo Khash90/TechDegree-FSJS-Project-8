@@ -76,7 +76,7 @@ router.post("/books/:id", asyncHandler(async(req,res) => {
       res.render("page-not-found", {title: "Page-Not-Found", err });
     }
   } catch (error) {
-    if (error.name === "SequelizeValidationErrors") {
+    if (error.name === "SequelizeValidationError") {
       book = await Book.build(req.body);
       book.id = req.params.id;
       res.render("update-book", {book, errors: error.errors, title: "New Book "})
