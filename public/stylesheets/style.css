@@ -1,6 +1,8 @@
 body {
   padding: 10px 50px 50px;
   font: 18px "Garamond", serif;
+  background: rgb(19, 8, 55);
+  color: white;
   
 }
 .main-error{
@@ -69,7 +71,7 @@ tr {
 }
 
 tr:nth-child(2n) {
-  background: #E7E7E7;
+  background: #423089;
 }
 
 td {
@@ -99,4 +101,32 @@ input[type=text] {
 
 .error {
   color: rgb(236, 15, 15);
+}
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  justify-content: space-between;
+}
+.table {
+  padding: 1.5rem 0;
+  border-radius: 2rem;
+  /* box-shadow: 0 0 1px rgba(86, 139, 207, 0.75) 0 32px rgb(65 120 255 / 24%); */
+  margin: 0 auto;
+}
+table {
+  border-collapse: collapse;
+}
+.search-form{
+  max-width: 200px;
+  display: flex;
+}
+.search-form button{
+  border: none;
+  background-color: #22007c;
+  padding: 0 13px;
+  border-radius: 4px;
+  cursor: pointer;
 }

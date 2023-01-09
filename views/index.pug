@@ -1,10 +1,12 @@
 extends layout
 
 block content
+ .nav
   h1 Library Manager
   p 
     a.button(href="books/new") Create Book
-
+  include search  
+ .table
   table 
     thead 
       tr 
