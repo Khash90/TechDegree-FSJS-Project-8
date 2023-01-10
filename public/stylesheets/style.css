@@ -131,3 +131,22 @@ table {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.pagination {
+  display: flex;
+}
+
+.pagination li {
+  margin: 0.5em;
+}
+footer{
+  
+  margin: 0 auto;
+  width: 10%;
+}
+
+@media screen and (min-width: 768px) {
+  header nav li:not(:first-of-type, :last-of-type) {
+    display: block;
+  }
+}
