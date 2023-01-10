@@ -142,7 +142,7 @@ table {
 .pagination li {
   margin: 0.5em;
   background: skyblue;
-    padding: 19px;
+    padding: 14px;
     border-radius: 5px;
 }
 
@@ -150,5 +150,5 @@ table {
 footer{
   
   margin: 0 auto;
-  width: 15%;
+  width: 12%;
 }
