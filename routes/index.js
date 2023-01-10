@@ -47,7 +47,7 @@ router.get('/books', asyncHandler(async(req, res) => {
 router.get(
   "/books/page=:page",
   asyncHandler(async (req, res) => {
-    const books = await Book.findAll();
+    const books = await Book.findAll({order: [["createdAt", "DESC"]]});
 
     // Extract page reference from params
     const page = req.params.page;
@@ -77,7 +77,7 @@ router.get(
 );
 
 //GET results from the search input and render results
-router.get('/search', asyncHandler(async (req, res) => {
+router.get('/books/search', asyncHandler(async (req, res) => {
     // Destructure the query from the query object
     const { query } = req.query;
     // If there is no search query (blank submission), redirect to home and repopulate the book list.
