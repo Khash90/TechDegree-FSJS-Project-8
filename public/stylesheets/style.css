@@ -141,11 +141,19 @@ table {
 
 .pagination li {
   margin: 0.5em;
+  background: skyblue;
+    padding: 19px;
+    border-radius: 5px;
 }
+.pagination li:active{
+  background: #423089;
+  color: white;
+}
+
 footer{
   
   margin: 0 auto;
-  width: 10%;
+  width: 15%;
 }
 
 @media screen and (min-width: 768px) {
