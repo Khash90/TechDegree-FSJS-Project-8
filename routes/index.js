@@ -47,7 +47,7 @@ router.get('/books', asyncHandler(async(req, res) => {
 router.get(
   "/page=:page",
   asyncHandler(async (req, res) => {
-    const books = await Book.findAll({ order: [["year", "ASC"]] });
+    const books = await Book.findAll();
 
     // Extract page reference from params
     const page = req.params.page;
