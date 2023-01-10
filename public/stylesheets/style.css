@@ -115,7 +115,10 @@ input[type=text] {
 }
 .table {
   padding: 1.5rem 0;
-  border-radius: 2rem;
+  border-radius: 1rem;
+  border: 2px solid;
+  width: 85%;
+  margin: 0 auto;
  
   
 }
