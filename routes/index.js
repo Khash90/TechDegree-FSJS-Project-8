@@ -45,7 +45,7 @@ router.get('/books', asyncHandler(async(req, res) => {
 
 // GET records based on page to be displayed
 router.get(
-  "/page=:page",
+  "/books/page=:page",
   asyncHandler(async (req, res) => {
     const books = await Book.findAll();
 
