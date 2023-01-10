@@ -6,5 +6,5 @@ footer
     //- while n < count / 3
     while n < count / resultsPerPage + 1
       li
-        a.pagi( href=`/books/page=${n}`) #{n}
+        a( href=`/books/page=${n}`) #{n}
         - n++
